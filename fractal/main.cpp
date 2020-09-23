@@ -99,7 +99,7 @@ auto handle_mouse_drag(GLFWwindow* window) {
 auto handle_mouse_wheel(GLFWwindow* window, float cx, float cy, float zoom) {
     float wheel = ImGui::GetIO().MouseWheel;
     if (std::abs(wheel) < 0.1) {
-        return std::make_tuple(0, 0, 1);
+        return std::make_tuple(0.0f, 0.0f, 1.0f);
     }
     auto mouse = ImGui::GetMousePos();
     auto [width, height] = get_window_size(window);
@@ -113,7 +113,6 @@ auto handle_mouse_wheel(GLFWwindow* window, float cx, float cy, float zoom) {
     else {
         wheel = 1.2;
     }
-    std::cout << wheel << std::endl;
     const auto nz = (1 - wheel) * zoom;
     float tx = (x + cx) * nz;
     float ty = (-y + cy) * nz;
@@ -192,7 +191,7 @@ int main(int, char **) {
 
         ImGui::Begin("Fractal props");
         ImGui::SetWindowSize(ImVec2(300, 200));
-        ImGui::SliderFloat("Zoom", &zoom, 0.01, 100);
+        ImGui::SliderFloat("Zoom out", &zoom, 0.01, 100);
         ImGui::SliderFloat("Max Radius", &max_radius, 0, 20);
         ImGui::SliderInt("Max Iterations", &max_iterations, 1, 100);
         if (ImGui::Button("Reset Center")) {
