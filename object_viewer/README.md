@@ -10,6 +10,13 @@
 ./build.sh && ./run.sh
 ```
 
+# Controls
+
+- `mouse drag` - rotate camera against (0, 0, 0)
+- `space + mouse drag` - rotate camera against current position
+- `wasd` - move camera
+- `q` - quit
+
 # Previews
 
 ![](images/screenshot1.png)
