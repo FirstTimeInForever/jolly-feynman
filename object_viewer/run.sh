@@ -1,5 +1,5 @@
 #!/bin/sh
 
 cd build
-./opengl-imgui-sample
+./object-viewer
 cd ..

@@ -46,7 +46,7 @@ public:
             } else if (name == "texture_normal") {
                 number = std::to_string(normal_textures++);
             }
-            shader.set_uniform<int>(name + number, index + 1);
+            shader.set_uniform(name + number, (int)(index + 1));
             glBindTexture(GL_TEXTURE_2D, textures[index].id);
         }
         glActiveTexture(GL_TEXTURE0);

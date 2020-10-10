@@ -1,5 +1,5 @@
 @ECHO ON
 
 cd build
-opengl-imgui-sample
+object-viewer
 cd ..
