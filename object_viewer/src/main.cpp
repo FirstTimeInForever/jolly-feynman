@@ -82,6 +82,7 @@ std::optional<GLFWwindow*> init() {
         scene_camera.mouse_move(xoffset, yoffset);
     });
 
+
     glfwSetScrollCallback(window, [](GLFWwindow* window, double xoffset, double yoffset) {
         scene_camera.mouse_scroll((float)yoffset);
     });
@@ -138,8 +139,7 @@ int main(int argc, char** argv) {
 
     auto delta_time = 0.0f;
     auto last_frame = 0.0f;
-    auto refraction_ratio = 1.0f / 1.52f;
-    auto effects_balance = 0.4f;
+    auto refraction_ratio = 1.5f;
     auto texture_balance = 0.5f;
     auto scale = 0.03f;
 
@@ -171,8 +171,7 @@ int main(int argc, char** argv) {
         ImGui::NewFrame();
         ImGui::SetWindowSize(ImVec2(200, 100));
         ImGui::Begin("Props");
-        ImGui::SliderFloat("Refraction/Reflection Balance", &effects_balance, 0, 1);
-        ImGui::SliderFloat("Refraction Ratio", &refraction_ratio, 0, 1);
+        ImGui::SliderFloat("Refraction Ratio", &refraction_ratio, 1.00001, 2.0f);
         ImGui::SliderFloat("Texture/Effects Balance", &texture_balance, 0, 1);
         ImGui::SliderFloat("Scale", &scale, 0.01, 2);
         ImGui::Combo("Model", &model_index, "lemur\0cat\0astronaut\0\0");
@@ -217,7 +216,6 @@ int main(int argc, char** argv) {
         model_shader.set_uniform("camera_position", scene_camera.position);
         model_shader.set_uniform("skybox_texture", 0);
         model_shader.set_uniform("refraction_ratio", refraction_ratio);
-        model_shader.set_uniform("effects_balance", effects_balance);
         model_shader.set_uniform("texture_balance", texture_balance);
 
         glActiveTexture(GL_TEXTURE0);
