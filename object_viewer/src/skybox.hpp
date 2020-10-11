@@ -94,7 +94,7 @@ namespace skybox {
             fmt::format("{}/negative-z.{}", directory, format),
         });
     }
-
+    
     inline auto create_skybox(const std::string& directory, const std::string& format = "jpg") {
         GLuint vao;
         GLuint vbo;

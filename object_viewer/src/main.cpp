@@ -132,7 +132,7 @@ int main(int argc, char** argv) {
     };
     std::array<std::tuple<GLuint, GLuint, GLuint, shader_program>, 4> skyboxes = {
         skybox::create_skybox("assets/skyboxes/water", "jpg"),
-        skybox::create_skybox("assets/skyboxes/debug", "tga"),
+        skybox::create_skybox("assets/skyboxes/debug", "jpg"),
         skybox::create_skybox("assets/skyboxes/forest1", "jpg"),
         skybox::create_skybox("assets/skyboxes/forest2", "jpg"),
     };
