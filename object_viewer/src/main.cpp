@@ -126,7 +126,7 @@ int main(int argc, char** argv) {
     );
     std::array<model, 3> models = {
         model("assets/models/lemur", "lemur.obj"),
-        model("assets/models/cat", "Cat.obj"),
+        model("assets/models/cat", "12221_Cat_v1_l3.obj"),
         model("assets/models/astronaut", "Astronaut.obj")
     };
     std::array<std::tuple<GLuint, GLuint, GLuint, shader_program>, 4> skyboxes = {
