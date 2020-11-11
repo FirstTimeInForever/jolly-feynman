@@ -8,6 +8,6 @@ mkdir build
 pushd build
 
 export CONAN_SYSREQUIRES_MODE=enabled
-conan install .. -s compiler.version=11.0
+conan install ..
 cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build .
